@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    #myButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    #myButton:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/1046092469760163891/1115211623615959050/photo-1554034483-04fda0d3507b.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+</head>
+<body>
+    <button id="myButton" onmouseover="moveButton()">Nhấn để nhận thưởng</button>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById("myButton");
+            var newX = Math.random() * (window.innerWidth - button.offsetWidth);
+            var newY = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = newX + "px";
+            button.style.top = newY + "px";
+        }
+    </script>
+</body>
+</html>
